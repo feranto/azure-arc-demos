@@ -1,0 +1,12 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: keyvault-driver-csi
+  namespace: gitops-azurearc
+spec:
+  releaseName: keyvault-driver-csi
+  chart:
+    git: https://github.com/Azure/secrets-store-csi-driver-provider-azure
+    ref: master
+    path: charts/csi-secrets-store-provider-azure-0.0.15.tgz
+  values:
